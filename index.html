@@ -1,398 +1,460 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SB 462 Technical Analysis | Invest in Louisiana</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
-        
-        body { 
-            font-family: 'Inter', sans-serif; 
-            color: #1a1a1a; 
-            background-color: #ffffff; 
-            line-height: 1.6;
-        }
-        
-        p {
-            max-width: 70ch;
-        }
-        
-        .bg-brand-dark { background-color: #005236; }
-        .bg-brand-mint { background-color: #6bc4a6; }
-        .bg-brand-orange { background-color: #ff992b; }
-        .bg-brand-urgent { background-color: #bb4f07; }
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SB 462 Committee Amendment Review | Invest in Louisiana</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
 
-        .text-brand-dark { color: #005236; }
-        .text-brand-mint { color: #6bc4a6; }
-        .text-brand-urgent { color: #bb4f07; }
+    body {
+      font-family: 'Inter', sans-serif;
+      color: #1a1a1a;
+      background: #ffffff;
+      line-height: 1.6;
+    }
 
-        .chart-container { position: relative; width: 100%; height: 350px; margin: auto; }
-        
-        .redline-box { 
-            font-family: 'Courier New', Courier, monospace; 
-            background-color: #f8fafc; 
-            color: #1e293b; 
-            padding: 1.25rem; 
-            border: 1px solid #e2e8f0;
-            border-left: 4px solid #bb4f07;
-            border-radius: 0.375rem; 
-            font-size: 0.875rem;
-            line-height: 1.7;
-        }
-        
-        .strike { 
-            background-color: #fee2e2; 
-            color: #991b1b; 
-            text-decoration: line-through; 
-            padding: 2px 4px; 
-            border-radius: 2px;
-        }
-        
-        .add { 
-            background-color: #dcfce7; 
-            color: #166534; 
-            text-decoration: none; 
-            font-weight: 700; 
-            padding: 2px 4px; 
-            border-radius: 2px;
-            border-bottom: 2px solid #166534;
-        }
-        
-        .nav-link:hover { color: #6bc4a6; }
-        
-        section { scroll-margin-top: 5rem; }
+    .bg-brand-dark { background-color: #005236; }
+    .bg-brand-mint { background-color: #6bc4a6; }
+    .bg-brand-orange { background-color: #ff992b; }
+    .bg-brand-urgent { background-color: #bb4f07; }
 
-        h1, h2, h3, h4 {
-            letter-spacing: -0.02em;
-        }
-    </style>
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        brand: {
-                            dark: '#005236',
-                            mint: '#6bc4a6',
-                            orange: '#ff992b',
-                            urgent: '#bb4f07',
-                            charcoal: '#1a1a1a'
-                        }
-                    }
-                }
+    .text-brand-dark { color: #005236; }
+    .text-brand-mint { color: #6bc4a6; }
+    .text-brand-orange { color: #ff992b; }
+    .text-brand-urgent { color: #bb4f07; }
+
+    .border-brand-dark { border-color: #005236; }
+    .border-brand-mint { border-color: #6bc4a6; }
+    .border-brand-orange { border-color: #ff992b; }
+    .border-brand-urgent { border-color: #bb4f07; }
+
+    .nav-link:hover { color: #6bc4a6; }
+    section { scroll-margin-top: 5rem; }
+
+    h1, h2, h3, h4 {
+      letter-spacing: -0.02em;
+    }
+
+    .redline-box {
+      font-family: 'Courier New', Courier, monospace;
+      background-color: #f8fafc;
+      color: #1e293b;
+      padding: 1.25rem;
+      border: 1px solid #e2e8f0;
+      border-left: 4px solid #bb4f07;
+      border-radius: 0.5rem;
+      font-size: 0.875rem;
+      line-height: 1.7;
+    }
+
+    .strike {
+      background-color: #fee2e2;
+      color: #991b1b;
+      text-decoration: line-through;
+      padding: 2px 4px;
+      border-radius: 2px;
+    }
+
+    .add {
+      background-color: #dcfce7;
+      color: #166534;
+      font-weight: 700;
+      padding: 2px 4px;
+      border-radius: 2px;
+      border-bottom: 2px solid #166534;
+    }
+  </style>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              dark: '#005236',
+              mint: '#6bc4a6',
+              orange: '#ff992b',
+              urgent: '#bb4f07',
+              charcoal: '#1a1a1a'
             }
+          }
         }
-    </script>
+      }
+    };
+  </script>
 </head>
 <body class="antialiased">
 
-    <!-- Header -->
-    <header class="bg-brand-dark text-white sticky top-0 z-50 shadow-md border-b-4 border-brand-mint">
-        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center py-4">
-            <div class="flex items-center gap-4">
-                <div class="bg-white p-1.5 rounded">
-                    <img src="https://raw.githubusercontent.com/Tia-Fields/SNAP_ErrorRates_LA/418dff9d7dcd3df2baa81d9b0abe4fb4753517f2/IIL-Logo-Secondary-FullColor-SM.png" alt="Invest Louisiana" class="h-8 w-auto">
-                </div>
-                <div>
-                    <h1 class="text-lg font-black uppercase leading-none">SB 462</h1>
-                    <p class="text-brand-mint font-bold text-[9px] uppercase tracking-widest mt-0.5">Technical Briefing</p>
-                </div>
-            </div>
-            <nav class="hidden md:flex gap-6 text-[10px] font-black uppercase tracking-widest">
-                <a href="#amendments" class="nav-link transition">Amendments</a>
-                <a href="#overview" class="nav-link transition">Overview</a>
-                <a href="#structure" class="nav-link transition">Structure</a>
-                <a href="#alignment" class="nav-link transition">Technical Risks</a>
-            </nav>
+  <!-- Header -->
+  <header class="bg-brand-dark text-white sticky top-0 z-50 shadow-md border-b-4 border-brand-mint">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center py-4">
+      <div class="flex items-center gap-4">
+        <div class="bg-white p-1.5 rounded">
+          <img
+            src="https://raw.githubusercontent.com/Tia-Fields/SNAP_ErrorRates_LA/418dff9d7dcd3df2baa81d9b0abe4fb4753517f2/IIL-Logo-Secondary-FullColor-SM.png"
+            alt="Invest in Louisiana"
+            class="h-8 w-auto"
+          />
         </div>
-    </header>
+        <div>
+          <h1 class="text-lg font-black uppercase leading-none">SB 462</h1>
+          <p class="text-brand-mint font-bold text-[9px] uppercase tracking-widest mt-0.5">
+            Committee Amendment Review
+          </p>
+        </div>
+      </div>
 
-    <main class="max-w-5xl mx-auto px-4 py-10">
+      <nav class="hidden md:flex gap-6 text-[10px] font-black uppercase tracking-widest">
+        <a href="#status" class="nav-link transition">Status</a>
+        <a href="#overview" class="nav-link transition">Overview</a>
+        <a href="#transfers" class="nav-link transition">Transfers</a>
+        <a href="#issues" class="nav-link transition">Technical Issues</a>
+        <a href="#sources" class="nav-link transition">Sources</a>
+      </nav>
+    </div>
+  </header>
 
-        <!-- 1. PRIORITY: TECHNICAL AMENDMENTS -->
-        <section id="amendments" class="mb-20">
-            <div class="mb-10">
-                <h2 class="text-xs font-black uppercase tracking-[0.3em] text-brand-urgent mb-2">Priority Action Items</h2>
-                <h3 class="text-3xl font-black text-brand-charcoal uppercase leading-tight">Recommended Technical Amendments</h3>
-                <p class="text-slate-500 mt-2 text-sm max-w-2xl">The following amendments are proposed to ensure the reorganized safety net structure maintains technical alignment with federal regulatory frameworks and due process standards.</p>
-            </div>
-            
-            <div class="space-y-10">
-                <!-- Amendment I -->
-                <div class="group">
-                    <div class="flex items-baseline gap-3 mb-4">
-                        <span class="text-2xl font-black text-brand-urgent/40">I.</span>
-                        <h4 class="text-lg font-bold text-brand-charcoal uppercase tracking-tight">Statutory Citation Modernization (R.S. 46:107(A)(1))</h4>
-                    </div>
-                    <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-start">
-                        <div class="space-y-4">
-                            <p class="text-sm text-slate-600 leading-relaxed">
-                                <span class="font-bold text-brand-charcoal">Analysis:</span> The current committee amendment text in <strong>R.S. 46:107(A)(1)</strong> still uses an outdated "Food Stamp Act, Public Law 91-671" reference. 
-                            </p>
-                            <p class="text-sm text-slate-600 leading-relaxed">
-                                <span class="font-bold text-brand-charcoal">Recommendation:</span> Updating the citation to the <strong>Food and Nutrition Act of 2008, 7 U.S.C. § 2011 et seq.</strong> would reduce legal ambiguity and better align Louisiana’s statute with current federal SNAP authorities.
-                            </p>
-                        </div>
-                        <div class="redline-box">
-                            <p class="text-[10px] uppercase font-black text-brand-urgent mb-2 opacity-60">Proposed Redline (R.S. 46:107(A)(1))</p>
-                            "...as prescribed under Title I, IV-A, X, XIV, XVI, XIX, or XX of the Social Security Act and under the <span class="strike">Food Stamp Act, Public Law 91-671</span> <span class="add">Food and Nutrition Act of 2008, 7 U.S.C. 2011 et seq.</span>"
-                        </div>
-                    </div>
-                </div>
+  <main class="max-w-5xl mx-auto px-4 py-10">
 
-                <!-- Amendment II -->
-                <div class="group border-t border-slate-100 pt-10">
-                    <div class="flex items-baseline gap-3 mb-4">
-                        <span class="text-2xl font-black text-brand-urgent/40">II.</span>
-                        <h4 class="text-lg font-bold text-brand-charcoal uppercase tracking-tight">Procedural Fair Hearings & Benefit Continuation</h4>
-                    </div>
-                    <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-start">
-                        <div class="space-y-4">
-                            <p class="text-sm text-slate-600 leading-relaxed">
-                                <span class="font-bold text-brand-charcoal">Analysis:</span> The current language does not expressly reference the continuation of benefits pending a hearing. SNAP fair-hearing rules under <strong>7 CFR 273.15</strong> provide this protection in qualifying cases.
-                            </p>
-                            <p class="text-sm text-slate-600 leading-relaxed">
-                                <span class="font-bold text-brand-charcoal">Recommendation:</span> This amendment would clarify state hearing language and reduce due process and implementation risk during the transition of hearing functions between agencies.
-                            </p>
-                        </div>
-                        <div class="redline-box">
-                            <p class="text-[10px] uppercase font-black text-brand-urgent mb-2 opacity-60">Proposed Redline (Hearing Language)</p>
-                            "...is not acted upon with reasonable promptness <span class="add">as defined by federal regulations</span>... subject to <span class="add">continuation of benefits pending hearing outcome in accordance with 7 CFR 273.15.</span>"
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- 2. EXECUTIVE OVERVIEW -->
-        <section id="overview" class="mb-20 bg-slate-50 p-8 md:p-12 rounded-3xl border border-slate-200 shadow-sm">
-            <h2 class="text-xs font-black uppercase tracking-[0.4em] text-brand-mint mb-4">Technical Overview</h2>
-            <h3 class="text-3xl font-black text-brand-dark uppercase mb-6 leading-tight">Safety Net Decoupling & Successor Mandates</h3>
-            <div class="prose prose-slate max-w-none text-brand-charcoal space-y-4 text-sm md:text-base">
-                <p>
-                    <strong>Senate Bill 462</strong> proposes the reorganization of the Department of Children and Family Services (DCFS), creating a decentralized model that shifts core safety net programs to <strong>Louisiana Works (LWC)</strong> and the <strong>Department of Health and Human Services (DHHS)</strong>.
-                </p>
-                <p>
-                    Under this structure, enforcement and oversight move to three specific legal and investigative successor agencies: the <strong>Department of Justice (DOJ)</strong>, <strong>Louisiana State Police (LSP)</strong>, and the <strong>Inspector General</strong>. This analysis examines the operational challenges of coordinating data-dependent functions across separate administrative structures.
-                </p>
-            </div>
-        </section>
-
-        <!-- 3. SUCCESSOR STRUCTURE -->
-        <section id="structure" class="mb-20">
-            <h2 class="text-xs font-black uppercase tracking-[0.4em] text-slate-400 mb-8">Successor Agency Redistribution</h2>
-            <div class="overflow-hidden rounded-2xl border border-slate-200 shadow-sm">
-                <table class="w-full text-left text-sm">
-                    <thead class="bg-slate-50 border-b border-slate-200 text-brand-dark font-black uppercase text-[10px]">
-                        <tr>
-                            <th class="px-6 py-4">Current DCFS Function</th>
-                            <th class="px-6 py-4">Successor Agency</th>
-                            <th class="px-6 py-4">Role / Mandate</th>
-                        </tr>
-                    </thead>
-                    <tbody class="divide-y divide-slate-100 bg-white">
-                        <tr>
-                            <td class="px-6 py-4 font-bold">SNAP & TANF Eligibility</td>
-                            <td class="px-6 py-4">Louisiana Works (LWC)</td>
-                            <td class="px-6 py-4 text-xs text-slate-500 italic">Programmatic Administration</td>
-                        </tr>
-                        <tr>
-                            <td class="px-6 py-4 font-bold">Child Welfare & Medicaid-related functions</td>
-                            <td class="px-6 py-4">DHHS (LDH Successor)</td>
-                            <td class="px-6 py-4 text-xs text-slate-500 italic">Clinical & Social Services</td>
-                        </tr>
-                        <tr>
-                            <td class="px-6 py-4 font-bold">Child Support Enforcement</td>
-                            <td class="px-6 py-4 text-brand-urgent font-bold">Dept. of Justice (DOJ)</td>
-                            <td class="px-6 py-4 text-xs text-slate-500 italic">Legal / Collections</td>
-                        </tr>
-                        <tr>
-                            <td class="px-6 py-4 font-bold">Bureau of Investigations</td>
-                            <td class="px-6 py-4 text-brand-urgent font-bold">State Police (LSP)</td>
-                            <td class="px-6 py-4 text-xs text-slate-500 italic">Fraud & Criminal Discovery</td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-            <div class="mt-4 p-4 bg-brand-dark rounded-xl flex items-center gap-4">
-                <div class="text-white">
-                    <p class="text-[10px] font-black uppercase tracking-widest text-brand-mint">Technical Note</p>
-                    <p class="text-xs opacity-90">The reorganization would benefit from a formal interagency data-sharing MOU or comparable protocol to help ensure that enforcement activities do not inadvertently contribute to eligibility errors without proper coordination.</p>
-                </div>
-            </div>
-        </section>
-
-        <!-- 4. PROGRAM INTEGRITY -->
-        <section id="alignment" class="mb-20">
-            <div class="bg-brand-dark rounded-3xl overflow-hidden shadow-xl flex flex-col lg:flex-row mb-12">
-                <div class="lg:w-2/5 p-8 md:p-12 text-white border-r border-white/10 flex flex-col">
-                    <h3 class="text-brand-mint font-black text-[10px] uppercase mb-2 tracking-widest">Program Integrity</h3>
-                    <h4 class="text-2xl font-black uppercase mb-6 leading-tight">System Interoperability & QC Risk</h4>
-                    <p class="text-sm text-brand-mint/80 leading-relaxed mb-6">
-                        Structural siloing of eligibility systems across separate agencies creates inherent obstacles to maintaining federal <strong>Quality Control (QC) standards</strong>. System fragmentation is a known contributor to elevated error rates, as data discrepancies can trigger improper benefit determinations and increased fiscal exposure.
-                    </p>
-                    <div class="chart-container mb-4">
-                        <canvas id="complianceChart"></canvas>
-                    </div>
-                    <div class="mt-auto space-y-4">
-                        <p class="text-[9px] text-brand-mint/40 italic text-center leading-tight">
-                            Illustrative policy-risk scoring based on structural review; not an empirical performance measure.
-                        </p>
-                        <p class="text-[10px] text-brand-mint/60 leading-relaxed text-center px-4">
-                            These risks are structural, not incidental—driven by how systems are organized rather than how individual cases are processed.
-                        </p>
-                    </div>
-                </div>
-                <div class="lg:w-3/5 p-8 bg-white flex flex-col justify-center">
-                    <h4 class="text-lg font-black text-brand-dark uppercase mb-6">Impact Analysis: ABAWD & Mandatory Exemptions</h4>
-                    
-                    <div class="space-y-6">
-                        <div class="border-l-4 border-brand-orange pl-4">
-                            <h5 class="font-bold text-sm uppercase text-brand-charcoal">Exemption Coordination & Error Rate Risk</h5>
-                            <p class="text-xs text-slate-600 mt-1 leading-relaxed">
-                                <strong>FRA 2023</strong> created or clarified ABAWD exceptions for veterans, individuals experiencing homelessness, and former foster youth. DCFS’s more centralized structure may allow for stronger coordination of exemption-related information. 
-                            </p>
-                            <p class="text-xs text-brand-urgent font-bold mt-2">
-                                REORG RISK: Under reorganization, fragmented systems increase the risk of misclassification. Failure to accurately reflect exemption status across agencies drives up the federal error rate, creating a higher likelihood of improper denial or termination, along with increased exposure to federal error rate penalties.
-                            </p>
-                        </div>
-
-                        <div class="border-l-4 border-brand-mint pl-4">
-                            <h5 class="font-bold text-sm uppercase text-brand-charcoal">Sunset Logic & System Controls</h5>
-                            <p class="text-xs text-slate-600 mt-1 leading-relaxed">
-                                The FRA 2023 age expansion sunsets in 2030. Reorganization planning should ensure Louisiana Works’ eligibility systems can adjust when the FRA sunset takes effect.
-                            </p>
-                            <p class="text-xs text-slate-500 italic mt-2">
-                                Without proper controls, the state risks applying outdated rules after expiration, potentially leading to increased QC errors and potential fiscal exposure.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- 5. TRANSITION RISKS -->
-        <section id="risks" class="mb-20">
-            <h2 class="text-xs font-black uppercase tracking-[0.4em] text-slate-400 mb-8">Technical Risk Analysis</h2>
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-                <div class="p-6 rounded-2xl border border-slate-200 shadow-sm">
-                    <p class="text-brand-urgent font-black text-[10px] uppercase mb-2">Fiscal Exposure</p>
-                    <h5 class="font-bold text-sm mb-2">Indirect Cost Allocation</h5>
-                    <p class="text-xs text-slate-500 italic">Distributing functions across LWC, DHHS, DOJ, and LSP complicates federal reimbursement claims for overhead. This may increase the risk of reduced administrative funding matches.</p>
-                </div>
-                <div class="p-6 rounded-2xl border border-slate-200 shadow-sm">
-                    <p class="text-brand-dark font-black text-[10px] uppercase mb-2">Continuity Risk</p>
-                    <h5 class="font-bold text-sm mb-2">Cross-Agency Priority Conflict</h5>
-                    <p class="text-xs text-slate-500 italic">Moving enforcement to DOJ and LSP risks creating silos where legal priorities override the stabilization goals of safety net programs, potentially impacting participant outcomes.</p>
-                </div>
-                <div class="p-6 rounded-2xl border border-slate-200 shadow-sm">
-                    <p class="text-brand-dark font-black text-[10px] uppercase mb-2">IT Systems Risk</p>
-                    <h5 class="font-bold text-sm mb-2">System Interoperability</h5>
-                    <p class="text-xs text-slate-500 italic">The reorganization should require interoperable, timely data exchange across agencies to reduce eligibility and notice errors and ensure compliance with modern federal standards.</p>
-                </div>
-            </div>
-        </section>
-
-    </main>
-
-    <footer class="bg-brand-charcoal text-white pt-16 pb-12">
-        <div class="max-w-4xl mx-auto px-4 text-center flex flex-col items-center">
-            <p class="text-[10px] font-black uppercase tracking-[0.4em] text-brand-mint mb-4">Technical Alignment Review</p>
-            <p class="text-[10px] font-bold tracking-widest opacity-60 uppercase mb-4">Invest in Louisiana | Safety Net Policy Analysis</p>
-            <div class="h-px w-16 bg-brand-mint/20 mb-8"></div>
-            
-            <!-- Contact Section -->
-            <div class="space-y-4 mb-10 w-full">
-                <div class="flex flex-col items-center">
-                    <span class="text-sm font-bold tracking-tight text-white mb-0.5">Tia Fields</span>
-                    <span class="text-[10px] uppercase tracking-[0.2em] text-brand-mint font-bold opacity-80">Safety Net Analyst</span>
-                </div>
-                
-                <div class="flex flex-col items-center gap-2">
-                    <a href="mailto:Tia@investlouisiana.org" class="text-xs hover:text-brand-mint transition-colors font-medium border-b border-transparent hover:border-brand-mint pb-0.5">
-                        Tia@investlouisiana.org
-                    </a>
-                    <a href="https://investlouisiana.org" target="_blank" class="text-xs text-brand-mint hover:text-white transition-colors font-bold uppercase tracking-widest">
-                        Investlouisiana.org
-                    </a>
-                </div>
-            </div>
-            
-            <p class="text-[9px] opacity-20 uppercase tracking-[0.3em] mt-8 pt-8 border-t border-white/5 w-full">
-                Technical Analysis of SB 462 Implementation Risks
+    <!-- STATUS -->
+    <section id="status" class="mb-14">
+      <div class="rounded-3xl overflow-hidden border border-slate-200 shadow-sm">
+        <div class="bg-slate-50 border-b border-slate-200 px-6 py-4">
+          <h2 class="text-xs font-black uppercase tracking-[0.35em] text-brand-urgent">Legislative Status Check</h2>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-0">
+          <div class="p-6 border-b md:border-b-0 md:border-r border-slate-200">
+            <p class="text-[10px] font-black uppercase tracking-widest text-slate-400 mb-2">Original Bill</p>
+            <h3 class="text-lg font-black text-brand-dark mb-2">Narrow Child Welfare Bill</h3>
+            <p class="text-sm text-slate-600">
+              The original instrument was a limited child welfare measure addressing training for child protection and foster care workers and child abuse reporting procedures.
             </p>
+          </div>
+          <div class="p-6 border-b md:border-b-0 md:border-r border-slate-200">
+            <p class="text-[10px] font-black uppercase tracking-widest text-slate-400 mb-2">Committee Substitute</p>
+            <h3 class="text-lg font-black text-brand-dark mb-2">Major Government Reorganization</h3>
+            <p class="text-sm text-slate-600">
+              The Senate committee amendment dramatically expands SB 462 into a broad restructuring bill abolishing DCFS and redistributing functions across multiple successor agencies.
+            </p>
+          </div>
+          <div class="p-6">
+            <p class="text-[10px] font-black uppercase tracking-widest text-slate-400 mb-2">Key Effective Dates</p>
+            <h3 class="text-lg font-black text-brand-dark mb-2">2026 Transition Timeline</h3>
+            <p class="text-sm text-slate-600">
+              Sections 1 through 33 become effective October 1, 2026. Sections 34 and 35 become effective upon signature, and certain administrative staff transfers are set for July 1, 2026.
+            </p>
+          </div>
         </div>
-    </footer>
+      </div>
+    </section>
 
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            const ctx = document.getElementById('complianceChart').getContext('2d');
-            
-            new Chart(ctx, {
-                type: 'radar',
-                data: {
-                    labels: [
-                        'DATA INTEROPERABILITY', 
-                        'AGENCY COORDINATION', 
-                        'SUNSET READINESS', 
-                        'EXEMPTION ACCURACY', 
-                        'NOTICE COMPLIANCE', 
-                        'ERROR RATE MITIGATION'
-                    ],
-                    datasets: [{
-                        label: 'SB 462 REORG READINESS',
-                        data: [25, 40, 10, 20, 30, 15],
-                        backgroundColor: 'rgba(255, 153, 43, 0.4)',
-                        borderColor: '#ff992b',
-                        borderWidth: 2,
-                        pointBackgroundColor: '#ff992b',
-                        pointRadius: 4
-                    }, {
-                        label: 'TECHNICAL STABILITY TARGET',
-                        data: [100, 100, 100, 100, 100, 100],
-                        backgroundColor: 'rgba(107, 196, 166, 0.1)',
-                        borderColor: '#6bc4a6',
-                        borderWidth: 1,
-                        borderDash: [5, 5],
-                        pointRadius: 0
-                    }]
-                },
-                options: {
-                    responsive: true,
-                    maintainAspectRatio: false,
-                    scales: {
-                        r: {
-                            angleLines: { color: 'rgba(255, 255, 255, 0.1)' },
-                            grid: { color: 'rgba(255, 255, 255, 0.05)' },
-                            suggestedMin: 0,
-                            suggestedMax: 100,
-                            ticks: { display: false },
-                            pointLabels: {
-                                color: '#6bc4a6',
-                                font: {
-                                    family: "'Inter', sans-serif",
-                                    size: 9,
-                                    weight: '800'
-                                }
-                            }
-                        }
-                    },
-                    plugins: {
-                        legend: {
-                            position: 'bottom',
-                            labels: {
-                                color: '#ffffff',
-                                font: { size: 10, weight: '700' },
-                                padding: 20
-                            }
-                        }
-                    }
-                }
-            });
-        });
-    </script>
+    <!-- OVERVIEW -->
+    <section id="overview" class="mb-20 bg-slate-50 p-8 md:p-12 rounded-3xl border border-slate-200 shadow-sm">
+      <h2 class="text-xs font-black uppercase tracking-[0.4em] text-brand-mint mb-4">Technical Overview</h2>
+      <h3 class="text-3xl font-black text-brand-dark uppercase mb-6 leading-tight">
+        What the Committee Amendment Actually Does
+      </h3>
+
+      <div class="space-y-4 text-sm md:text-base text-slate-700">
+        <p>
+          <strong>Senate Bill 462, as amended in committee, is no longer just a child welfare bill.</strong>
+          It becomes a large-scale reorganization measure that abolishes the Department of Children and Family Services, renames and restructures the Louisiana Department of Health, transfers child welfare functions to the Louisiana Department of Health and Human Services, transfers child support enforcement functions to the Department of Justice, and transfers intake and initial response of child abuse and neglect reports to the office of state police.
+        </p>
+
+        <p>
+          This matters because the amendment does <strong>not</strong> present a clean one-agency replacement model. It is a legal redistribution bill. Across its 111 pages, references are reassigned to multiple successor entities depending on function, and some governance provisions reflect split representation across agencies rather than a single consolidated administrative home.
+        </p>
+
+        <p>
+          For that reason, any public-facing analysis should be careful not to overstate where all SNAP, TANF, foster care, or child welfare functions definitively land unless the specific statutory section says so. The committee amendment clearly supports some transfers. It does <strong>not</strong> support a simple blanket statement that all public assistance eligibility shifts to Louisiana Works.
+        </p>
+      </div>
+    </section>
+
+    <!-- CONFIRMED TRANSFERS -->
+    <section id="transfers" class="mb-20">
+      <div class="mb-8">
+        <h2 class="text-xs font-black uppercase tracking-[0.4em] text-slate-400 mb-2">Confirmed from the Amendment Text</h2>
+        <h3 class="text-3xl font-black text-brand-charcoal uppercase leading-tight">Function Transfers That Are Clearly Supported</h3>
+      </div>
+
+      <div class="overflow-hidden rounded-2xl border border-slate-200 shadow-sm bg-white">
+        <table class="w-full text-left text-sm">
+          <thead class="bg-slate-50 border-b border-slate-200 text-brand-dark font-black uppercase text-[10px]">
+            <tr>
+              <th class="px-6 py-4">Function Area</th>
+              <th class="px-6 py-4">Successor Agency</th>
+              <th class="px-6 py-4">Confidence Level</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-slate-100">
+            <tr>
+              <td class="px-6 py-4 font-bold">Child welfare functions</td>
+              <td class="px-6 py-4">Louisiana Department of Health and Human Services</td>
+              <td class="px-6 py-4 text-xs text-slate-500 italic">Explicit in amendment summary language</td>
+            </tr>
+            <tr>
+              <td class="px-6 py-4 font-bold">Child support enforcement</td>
+              <td class="px-6 py-4">Department of Justice</td>
+              <td class="px-6 py-4 text-xs text-slate-500 italic">Explicit in amendment summary language and revised statutory references</td>
+            </tr>
+            <tr>
+              <td class="px-6 py-4 font-bold">Intake and initial response to child abuse and neglect reports</td>
+              <td class="px-6 py-4">Office of State Police</td>
+              <td class="px-6 py-4 text-xs text-slate-500 italic">Explicit in amendment summary language</td>
+            </tr>
+            <tr>
+              <td class="px-6 py-4 font-bold">Administrative support staff tied to accounting, procurement, contracts, data processing, personnel, and grants</td>
+              <td class="px-6 py-4">Louisiana Department of Health and Human Services</td>
+              <td class="px-6 py-4 text-xs text-slate-500 italic">Explicit transfer language for July 1, 2026</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="mt-6 grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div class="p-6 rounded-2xl border border-slate-200 bg-slate-50">
+          <p class="text-[10px] font-black uppercase tracking-widest text-brand-urgent mb-2">Important Limitation</p>
+          <h4 class="text-sm font-black text-brand-dark uppercase mb-2">Do Not Oversimplify SNAP Administration</h4>
+          <p class="text-sm text-slate-600">
+            The amendment includes references showing Louisiana Works in some council and program-governance provisions, but it also places related representation inside Louisiana Department of Health and Human Services provisions. That is a split signal, not a clean statutory handoff of all SNAP eligibility administration.
+          </p>
+        </div>
+
+        <div class="p-6 rounded-2xl border border-slate-200 bg-slate-50">
+          <p class="text-[10px] font-black uppercase tracking-widest text-brand-dark mb-2">Safer Framing</p>
+          <h4 class="text-sm font-black text-brand-dark uppercase mb-2">Describe the Bill as a Redistribution Measure</h4>
+          <p class="text-sm text-slate-600">
+            The amendment is best described as a reorganization bill that redistributes former DCFS functions across DHHS, DOJ, and State Police, while also revising scattered statutory references and governance structures across Louisiana law.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- TECHNICAL ISSUES -->
+    <section id="issues" class="mb-20">
+      <div class="mb-10">
+        <h2 class="text-xs font-black uppercase tracking-[0.3em] text-brand-urgent mb-2">Technical Issues</h2>
+        <h3 class="text-3xl font-black text-brand-charcoal uppercase leading-tight">Defensible Corrections & Recommended Amendments</h3>
+        <p class="text-slate-500 mt-2 text-sm max-w-3xl">
+          These recommendations are grounded in the amendment text and in current federal SNAP authorities. They are framed as legal-cleanup and due-process protections, not as claims the bill already makes.
+        </p>
+      </div>
+
+      <div class="space-y-10">
+        <!-- Amendment I -->
+        <div class="group">
+          <div class="flex items-baseline gap-3 mb-4">
+            <span class="text-2xl font-black text-brand-urgent/40">I.</span>
+            <h4 class="text-lg font-bold text-brand-charcoal uppercase tracking-tight">
+              Statutory Citation Modernization in R.S. 46:107(A)(1)
+            </h4>
+          </div>
+
+          <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-start">
+            <div class="space-y-4">
+              <p class="text-sm text-slate-600 leading-relaxed">
+                <span class="font-bold text-brand-charcoal">Issue:</span>
+                The committee amendment retains an outdated reference to the
+                <strong>"Food Stamp Act, Public Law 91-671"</strong>.
+              </p>
+              <p class="text-sm text-slate-600 leading-relaxed">
+                <span class="font-bold text-brand-charcoal">Why it matters:</span>
+                Federal SNAP authority is now codified under the
+                <strong>Food and Nutrition Act of 2008, 7 U.S.C. § 2011 et seq.</strong>
+                Updating the citation would reduce unnecessary ambiguity.
+              </p>
+            </div>
+
+            <div class="redline-box">
+              <p class="text-[10px] uppercase font-black text-brand-urgent mb-2 opacity-60">
+                Proposed Redline
+              </p>
+              "...as prescribed under Title I, IV-A, X, XIV, XVI, XIX, or XX of the Social Security Act and under the
+              <span class="strike">Food Stamp Act, Public Law 91-671</span>
+              <span class="add">Food and Nutrition Act of 2008, 7 U.S.C. 2011 et seq.</span>"
+            </div>
+          </div>
+        </div>
+
+        <!-- Amendment II -->
+        <div class="group border-t border-slate-100 pt-10">
+          <div class="flex items-baseline gap-3 mb-4">
+            <span class="text-2xl font-black text-brand-urgent/40">II.</span>
+            <h4 class="text-lg font-bold text-brand-charcoal uppercase tracking-tight">
+              Fair Hearing and Continuation-of-Benefits Clarity
+            </h4>
+          </div>
+
+          <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-start">
+            <div class="space-y-4">
+              <p class="text-sm text-slate-600 leading-relaxed">
+                <span class="font-bold text-brand-charcoal">Issue:</span>
+                The amendment is a structural reorganization, but it does not itself spell out how hearing rights and continuation-of-benefits protections will be preserved when SNAP-related actions cross agency lines.
+              </p>
+              <p class="text-sm text-slate-600 leading-relaxed">
+                <span class="font-bold text-brand-charcoal">Why it matters:</span>
+                Federal SNAP rules require fair hearing access under <strong>7 C.F.R. § 273.15</strong>, and notice rules under <strong>7 C.F.R. § 273.13</strong> include continuation obligations when applicable.
+              </p>
+            </div>
+
+            <div class="redline-box">
+              <p class="text-[10px] uppercase font-black text-brand-urgent mb-2 opacity-60">
+                Proposed Clarifying Language
+              </p>
+              "...subject to federal fair hearing protections, including continuation of benefits where applicable, in accordance with
+              <span class="add">7 C.F.R. § 273.15 and related notice requirements under 7 C.F.R. § 273.13</span>."
+            </div>
+          </div>
+        </div>
+
+        <!-- Amendment III -->
+        <div class="group border-t border-slate-100 pt-10">
+          <div class="flex items-baseline gap-3 mb-4">
+            <span class="text-2xl font-black text-brand-urgent/40">III.</span>
+            <h4 class="text-lg font-bold text-brand-charcoal uppercase tracking-tight">
+              Cross-Agency Administration and Data Continuity
+            </h4>
+          </div>
+
+          <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-start">
+            <div class="space-y-4">
+              <p class="text-sm text-slate-600 leading-relaxed">
+                <span class="font-bold text-brand-charcoal">Issue:</span>
+                The amendment redistributes programs, contracts, employees, and administrative rules across multiple agencies, but the public policy risk is not just legal transfer. It is also operational continuity.
+              </p>
+              <p class="text-sm text-slate-600 leading-relaxed">
+                <span class="font-bold text-brand-charcoal">Why it matters:</span>
+                When legal authority moves faster than systems, notices, staff workflows, case records, and interagency referrals can fracture. That is where people get lost and the state starts pretending paperwork is governance.
+              </p>
+            </div>
+
+            <div class="redline-box">
+              <p class="text-[10px] uppercase font-black text-brand-urgent mb-2 opacity-60">
+                Recommended Implementation Language
+              </p>
+              "The successor agencies shall maintain interoperable case administration, notice, hearing, records-transfer, and referral procedures sufficient to preserve continuity of services and compliance with applicable federal law during and after transition."
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- IMPLEMENTATION NOTES -->
+    <section id="implementation" class="mb-20">
+      <div class="bg-brand-dark rounded-3xl overflow-hidden shadow-xl">
+        <div class="grid grid-cols-1 lg:grid-cols-2">
+          <div class="p-8 md:p-10 text-white border-b lg:border-b-0 lg:border-r border-white/10">
+            <h3 class="text-brand-mint font-black text-[10px] uppercase mb-2 tracking-widest">
+              Reading the Bill Carefully
+            </h3>
+            <h4 class="text-2xl font-black uppercase mb-4 leading-tight">
+              What This Page Does Not Claim
+            </h4>
+            <ul class="space-y-3 text-sm text-white/85 list-disc pl-5">
+              <li>It does not claim that all SNAP eligibility administration shifts to Louisiana Works.</li>
+              <li>It does not claim that every former DCFS function has a single clean successor without overlap.</li>
+              <li>It does not claim a quantified fiscal penalty from this bill alone.</li>
+              <li>It does not convert operational risk into a fake certainty.</li>
+            </ul>
+          </div>
+
+          <div class="p-8 md:p-10 bg-white">
+            <h3 class="text-brand-urgent font-black text-[10px] uppercase mb-2 tracking-widest">
+              Safer Analytical Takeaway
+            </h3>
+            <h4 class="text-xl font-black text-brand-dark uppercase mb-4 leading-tight">
+              The Real Risk Is Structural Fragmentation
+            </h4>
+            <div class="space-y-3 text-sm text-slate-600">
+              <p>
+                The committee amendment clearly redistributes authority across multiple successor agencies and preserves continuity for contracts, rules, and employees through transfer language.
+              </p>
+              <p>
+                The risk is not that the bill says one obvious false thing. The risk is that it creates a multi-agency system that may be legally reassigned faster than it is administratively stabilized.
+              </p>
+              <p class="font-semibold text-brand-urgent">
+                That is where litigation, due-process failures, and service disruption tend to breed: in the gap between statute and implementation.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SOURCES -->
+    <section id="sources" class="mb-16">
+      <div class="mb-8">
+        <h2 class="text-xs font-black uppercase tracking-[0.4em] text-slate-400 mb-2">Source Notes</h2>
+        <h3 class="text-3xl font-black text-brand-charcoal uppercase leading-tight">Authorities Reflected in This Draft</h3>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div class="p-6 rounded-2xl border border-slate-200 bg-slate-50">
+          <p class="text-[10px] font-black uppercase tracking-widest text-brand-dark mb-3">Louisiana Legislative Text</p>
+          <ul class="space-y-2 text-sm text-slate-600 list-disc pl-5">
+            <li>Original SB 462: narrow child welfare bill focused on worker training and reporting procedures.</li>
+            <li>Committee amendment: abolishes DCFS, restructures LDH into DHHS, transfers child welfare to DHHS, child support enforcement to DOJ, and intake/initial abuse response to State Police.</li>
+            <li>Committee amendment effective-date language: Sections 1 through 33 effective October 1, 2026; Sections 34 and 35 effective upon signature; designated administrative transfers July 1, 2026.</li>
+          </ul>
+        </div>
+
+        <div class="p-6 rounded-2xl border border-slate-200 bg-slate-50">
+          <p class="text-[10px] font-black uppercase tracking-widest text-brand-dark mb-3">Federal SNAP Authorities</p>
+          <ul class="space-y-2 text-sm text-slate-600 list-disc pl-5">
+            <li>Food and Nutrition Act of 2008, 7 U.S.C. § 2011 et seq.</li>
+            <li>Fair hearing protections under 7 C.F.R. § 273.15.</li>
+            <li>Notice of adverse action and continuation requirements under 7 C.F.R. § 273.13 where applicable.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="bg-slate-950 text-white pt-16 pb-12">
+    <div class="max-w-4xl mx-auto px-4 text-center flex flex-col items-center">
+      <p class="text-[10px] font-black uppercase tracking-[0.4em] text-brand-mint mb-4">
+        Technical Alignment Review
+      </p>
+      <p class="text-[10px] font-bold tracking-widest opacity-60 uppercase mb-4">
+        Invest in Louisiana | Safety Net Policy Analysis
+      </p>
+
+      <div class="h-px w-16 bg-brand-mint/20 mb-8"></div>
+
+      <div class="space-y-4 mb-10 w-full flex flex-col items-center">
+        <div class="flex flex-col items-center">
+          <span class="text-sm font-bold tracking-tight text-white mb-0.5">Tia Fields</span>
+          <span class="text-[10px] uppercase tracking-[0.2em] text-brand-mint font-bold opacity-80">
+            Safety Net Analyst
+          </span>
+        </div>
+
+        <div class="flex flex-col items-center gap-2">
+          <a
+            href="mailto:Tia@investlouisiana.org"
+            class="text-xs hover:text-brand-mint transition-colors font-medium border-b border-transparent hover:border-brand-mint pb-0.5"
+          >
+            Tia@investlouisiana.org
+          </a>
+          <a
+            href="https://investlouisiana.org"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="text-xs text-brand-mint hover:text-white transition-colors font-bold uppercase tracking-widest"
+          >
+            InvestLouisiana.org
+          </a>
+        </div>
+      </div>
+
+      <p class="text-[9px] opacity-20 uppercase tracking-[0.3em] mt-8 pt-8 border-t border-white/5 w-full">
+        SB 462 Committee Amendment Review
+      </p>
+    </div>
+  </footer>
+
 </body>
 </html>
